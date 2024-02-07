@@ -23,4 +23,4 @@ authorSchema.pre("deleteOne", async function (next) {
   }
 });
 
-module.exports = mongoose.model("Author", authorSchema);
+module.exports = mongoose.model("Author", authorSchema); // Author is the name of the collection

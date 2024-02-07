@@ -30,9 +30,9 @@ const bookSchema = new mongoose.Schema({
     required: true,
   },
   author: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId, // References another object in our collection
     required: true,
-    ref: "Author",
+    ref: "Author", // Author collection
   },
 });
 
@@ -44,4 +44,4 @@ bookSchema.virtual("coverImagePath").get(function () {
   }
 });
 
-module.exports = mongoose.model("Book", bookSchema);
+module.exports = mongoose.model("Book", bookSchema); // Book is the name of our table

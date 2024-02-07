@@ -26,8 +26,9 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to mongoose"));
 
+// Hooking up our frontend
 app.use("/", indexRouter);
-app.use("/authors", authorRouter);
+app.use("/authors", authorRouter); // every route inside our router is going to be prepended with /authors
 app.use("/books", bookRouter);
 
 app.listen(process.env.PORT || 3000);
